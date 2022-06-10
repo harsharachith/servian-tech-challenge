@@ -35,19 +35,23 @@ jobs:
         id: init
         run: terraform init
           
-      - name: Terraform Plan
-        id: plan
-        # if: github.event_name == 'pull_request'
-        run: terraform plan -no-color
-        continue-on-error: true
+      - name: Terraform Destroy
+        id: init
+        run: terraform destroy
 
-      - name: Terraform Plan Status
-        if: steps.plan.outcome == 'failure'
-        run: exit 1
+      # - name: Terraform Plan
+      #   id: plan
+      #   # if: github.event_name == 'pull_request'
+      #   run: terraform plan -no-color
+      #   continue-on-error: true
 
-      - name: Terraform Apply
-        # if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
-        run: terraform apply -auto-approve
+      # - name: Terraform Plan Status
+      #   if: steps.plan.outcome == 'failure'
+      #   run: exit 1
+
+      # - name: Terraform Apply
+      #   # if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
+      #   run: terraform apply -auto-approve
   
   bootstrap:
     name: bootstrap-cluster

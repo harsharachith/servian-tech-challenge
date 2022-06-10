@@ -60,7 +60,7 @@ jobs:
         if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
         uses: google-github-actions/get-gke-credentials@main
         with:
-          cluster_name: production-cluster
+          cluster_name: servian
           location: us-east1
           credentials: ${{ secrets.GCP_SECRET }}
       

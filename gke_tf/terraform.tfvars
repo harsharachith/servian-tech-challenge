@@ -1,10 +1,10 @@
-cluster_name           = "production-cluster"
+cluster_name           = "servian"
 location               = "us-east1"
 project_id             = "cogent-point-212609"
 subnetwork             = "default"
 istio_enabled          = "false"
 istio_auth             = "AUTH_MUTUAL_TLS"
-node_pool_name         = "production-cluster-node-pool-1"
+node_pool_name         = "servian-node-pool-1"
 master_version         = "1.15.12-gke.3"
 worker_nodes_version   = "1.15.12-gke.3"
 node_locations         = ["us-east1-b", "us-east1-c"]

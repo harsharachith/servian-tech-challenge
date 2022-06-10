@@ -65,21 +65,4 @@ jobs:
           credentials: ${{ secrets.GCP_SECRET }}
       
       - id: get-pods
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
-        run: kubectl get pods -A 
-
-      - id: install-flagger 
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
-        run: |
-          helm repo add flagger https://flagger.app
-          helm install my-flagger flagger/flagger --version 1.4.2
-
-      - id: install-istio-operator
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
-        run: |
-          helm repo add stevehipwell https://stevehipwell.github.io/helm-charts/
-          helm install my-istio-operator stevehipwell/istio-operator --version 1.2.2
-
-      - id: get-pods-after-bootstrap
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
         run: kubectl get pods -A 

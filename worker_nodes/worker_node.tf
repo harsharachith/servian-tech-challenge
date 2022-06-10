@@ -9,7 +9,7 @@ resource "google_container_node_pool" "worker_nodes" {
   location       = var.location
   project        = var.project_id
   version        = var.worker_nodes_version
-  cluster        = "production-cluster"
+  cluster        = "servian"
   node_locations = var.node_locations
   node_count     = var.worker_nodes_count
   node_config {

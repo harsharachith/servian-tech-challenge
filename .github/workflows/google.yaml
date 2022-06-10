@@ -62,6 +62,11 @@ jobs:
           cluster_name: servian
           location: us-east1
           credentials: ${{ secrets.GCP_SECRET }}
-      
+
+      - id: apply-pods
+        run: kubectl apply -f deployment.yaml
+
       - id: get-pods
         run: kubectl get pods -A 
+
+      

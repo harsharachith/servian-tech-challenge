@@ -17,6 +17,7 @@ jobs:
     name: "Terraform"
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         working-directory: [gke_tf, worker_nodes]
     defaults:

@@ -36,7 +36,7 @@ jobs:
         run: terraform init
           
       - name: Terraform Destroy
-        id: init
+        id: destroy
         run: terraform destroy
 
       # - name: Terraform Plan

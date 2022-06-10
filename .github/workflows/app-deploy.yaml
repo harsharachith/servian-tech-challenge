@@ -8,17 +8,6 @@ on:
         default: v1.0.0
         required: true
 jobs:
-  bootstrap:
-    name: bootstrap-cluster
-    runs-on: ubuntu-latest
-    steps:    
-      - id: get-credentials
-        uses: google-github-actions/get-gke-credentials@main
-        with:
-          cluster_name: servian
-          location: us-east1
-          credentials: ${{ secrets.GCP_SECRET }}
-
   terraform:
     env:
         GOOGLE_CREDENTIALS: ${{ secrets.GCP_SECRET }}
@@ -37,6 +26,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: gke get credentials 
+        id: getcred 
+        run: gcloud container clusters get-credentials servian --region us-east1
 
       - name: Terraform Format
         id: fmt

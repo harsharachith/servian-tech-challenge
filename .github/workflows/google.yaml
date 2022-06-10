@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        working-directory: [gke_tf, worker_nodes, deployment]
+        working-directory: [gke_tf, worker_nodes]
     defaults:
       run:
         working-directory: ${{ matrix.working-directory }}
@@ -62,9 +62,6 @@ jobs:
           cluster_name: servian
           location: us-east1
           credentials: ${{ secrets.GCP_SECRET }}
-
-      - id: apply-pods
-        run: kubectl apply -f gke_tf/deployment.yaml
 
       - id: get-pods
         run: kubectl get pods -A 

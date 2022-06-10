@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: servian-app
+spec:
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: servian-app
+    spec:
+      containers:
+      - name: servian-app-pod
+        image: servian/techchallengeapp:latest
+        ports: 
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: servian-app-service
+spec:
+  selector:
+    app: servian-app
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer

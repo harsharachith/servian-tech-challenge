@@ -33,5 +33,8 @@ jobs:
           credentials: ${{ secrets.GCP_SECRET }}
 
       - run: |-
+          kubectl apply -f deployment.yaml
+
+      - run: |-
           kubectl get pods -A
       

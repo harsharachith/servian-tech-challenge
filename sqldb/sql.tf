@@ -1,5 +1,5 @@
 resource "google_sql_database_instance" "main" {
-  name             = "main-instance"
+  name             = "main-instance1"
   database_version = "POSTGRES_14"
   region           = "us-central1"
   project          = "phonic-chemist-353004"
@@ -18,7 +18,7 @@ resource "random_id" "user_password" {
 resource "google_sql_user" "postgresql_user" {
   name = "dbadmin"
   project  = "phonic-chemist-353004"
-  instance = "main-instance"
+  instance = "main-instance1"
   host = "%"
   password = "dbadmin"
 }

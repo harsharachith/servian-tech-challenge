@@ -12,6 +12,7 @@ resource "google_container_node_pool" "worker_nodes" {
   cluster        = "servian"
   node_locations = var.node_locations
   node_count     = var.worker_nodes_count
+  remove_default_node_pool = true
   node_config {
     disk_size_gb = var.worker_nodes_disk_size
     machine_type = var.worker_node_type

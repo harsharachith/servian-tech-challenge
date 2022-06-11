@@ -2,9 +2,9 @@ name: "GKE Terraform"
 
 on:
   push:
-    paths:
-    - 'gke_tf/**'
-    - 'worker_nodes/**' 
+    # paths:
+    # - 'gke_tf/**'
+    # - 'worker_nodes/**' 
     branches:
       - main
 

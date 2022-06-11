@@ -11,6 +11,7 @@ resource "google_sql_database_instance" "main" {
   }
 }
 
+
 resource "random_id" "user_password" {
   byte_length = 8
 }

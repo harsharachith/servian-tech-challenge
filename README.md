@@ -1,8 +1,9 @@
-# servian-tech-challenge
+# Deployment using tf
 
 ## Architecture of the solution
 
-![image](https://user-images.githubusercontent.com/26404622/172978863-251455c7-671f-4504-9a98-f8f5bbad8298.png)
+![image](https://user-images.githubusercontent.com/26404622/173174401-0ae8994d-90bd-4056-8981-0ac05a130afd.png)
+
 
 ## Added autoscale when creating gke
 

@@ -36,6 +36,21 @@ spec:
         image: servian/techchallengeapp:latest
         ports:
         - containerPort: 8080
+        env:
+        - name: VTT_DBUSER
+          value: "dbadmin"
+        - name: VTT_DBPASSWORD
+          value: "dbadmin"
+        - name: VTT_DBNAME
+          value: "main-instance"
+        - name: VTT_DBPORT
+          value: "5432"
+        - name: VTT_DBHOST
+          value: "%"
+        - name: VTT_LISTENHOST
+          value: "%"
+        - name: VTT_LISTENPORT
+          value: "5432"
         # resources:
         #   requests:
         #     cpu: 100m

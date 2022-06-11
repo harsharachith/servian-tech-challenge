@@ -2,6 +2,7 @@ resource "google_sql_database_instance" "main" {
   name             = "main-instance"
   database_version = "POSTGRES_14"
   region           = "us-central1"
+  project          = "phonic-chemist-353004"
 
   settings {
     # Second-generation instance tiers are based on the machine

@@ -1,6 +1,6 @@
 cluster_name           = "servian"
 location               = "us-east1"
-project_id             = "cogent-point-212609"
+project_id             = "phonic-chemist-353004"
 subnetwork             = "default"
 istio_enabled          = "false"
 istio_auth             = "AUTH_MUTUAL_TLS"

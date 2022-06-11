@@ -1,6 +1,6 @@
 cluster_name           = "servian"
 location               = "us-east1"
-project_id             = "cogent-point-212609"
+project_id             = "phonic-chemist-353004"
 subnetwork             = "default"
 node_pool_name         = "servian-node-pool-2"
 master_version         = "1.22.8-gke.201"

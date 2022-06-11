@@ -21,7 +21,7 @@ jobs:
       - uses: google-github-actions/setup-gcloud@v0.2.0
         with:
           service_account_key: ${{ secrets.GCP_SECRET }}
-          project_id: cogent-point-212609
+          project_id: phonic-chemist-353004
 
       - run: |-
           gcloud --quiet auth configure-docker

@@ -1,12 +1,10 @@
 name: "SQL Terraform"
 
 on:
-  push:
-    paths:
-    # - 'gke_tf/**'
-    - 'sqldb/**' 
-    branches:
-      - main
+  workflow_run:
+    workflows: ["GKE Terraform"]
+    types:
+      - completed
 
 jobs:
   terraform:

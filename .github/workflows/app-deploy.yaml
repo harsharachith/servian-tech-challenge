@@ -32,6 +32,7 @@ jobs:
 
       - run: |-
           kubectl apply -f deployment.yaml
+          
 
       - run: |-
           kubectl get pods -A

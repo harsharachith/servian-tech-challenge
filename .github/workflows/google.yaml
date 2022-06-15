@@ -7,6 +7,12 @@ on:
     - 'worker_nodes/**' 
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Trigger
+        default: Manual
+        required: true
 
 jobs:
   terraform:

@@ -3,6 +3,7 @@ name: "GKE Terraform"
 on:
   push:
     paths:
+    - 'tfstatef/**' 
     - 'gke_tf/**'
     - 'worker_nodes/**' 
     branches:
@@ -17,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        working-directory: [gke_tf, worker_nodes]
+        working-directory: [tfstatef, gke_tf, worker_nodes]
     defaults:
       run:
         working-directory: ${{ matrix.working-directory }}

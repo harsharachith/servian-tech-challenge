@@ -13,27 +13,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      #Checkingout the code
       - name: Checkout
         uses: actions/checkout@v2
-
+      #Setuping the gcloud
       - uses: google-github-actions/setup-gcloud@v0.2.0
         with:
           service_account_key: ${{ secrets.GCP_SECRET }}
           project_id: phonic-chemist-353004
-
+      #Docker auth
       - run: |-
           gcloud --quiet auth configure-docker
-
+      #Getting GKE credentials
       - uses: google-github-actions/get-gke-credentials@v0.2.1
         with:
           cluster_name: servian
           location: us-east1
           credentials: ${{ secrets.GCP_SECRET }}
-
+      #Applying our deployment 
       - run: |-
           kubectl apply -f deployment.yaml
-          
-
+      #List All Pods
       - run: |-
           kubectl get pods -A
       

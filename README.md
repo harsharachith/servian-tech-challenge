@@ -1,4 +1,4 @@
-# Deployment using tf
+
 
 ## Prerequisites 
 - Need to create a service account
@@ -12,4 +12,17 @@ https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating
 
 ![image](https://user-images.githubusercontent.com/26404622/173892585-b1efadd0-084c-40eb-8b6a-ea5fabd686c9.png)
 
-## How This Starts with
+## How The github workflow Starts with
+- Can start with manually using below url 
+https://github.com/harsharachith/servian-tech-challenge/actions/workflows/google.yaml
+
+- Or it will trigger as the file change on gke_tf , worker_nodes , sqldb folders 
+
+## Final Output
+
+- Below is the final outcome 
+![image](https://user-images.githubusercontent.com/26404622/173899225-3f23fea9-d942-42c8-8dc1-1eceb352a881.png)
+
+- App deployment workflow url 
+https://github.com/harsharachith/servian-tech-challenge/actions/workflows/app-deploy.yaml
+
